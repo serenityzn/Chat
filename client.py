@@ -12,9 +12,7 @@ class MyProg(Protocol):
                 self.transport.write("%s\n" % msg)
 
         def dataReceived(self, data):
-#                text=self.chat_msg.get_text()+"\r\n"+data
                 self.larr.get_buffer().insert_at_cursor(data)
-                print data
 
 	def window(self):
 #                app_window = gtk.Window(gtk.WINDOW_TOPLEVEL)
@@ -90,8 +88,6 @@ class MyProg(Protocol):
 		return
 		
 	def button_send_callback(self, widget, data_a):
-#		print self.button_send_data
-		#self.larr.get_buffer().insert_at_cursor(self.button_send_data+"\r\n")
 		self.sendMessage(self.button_send_data)
 		return
 
