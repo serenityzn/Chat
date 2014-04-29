@@ -31,7 +31,7 @@ class Server(Protocol):
 		spl = data[4:].split(">")
 		self.factory.sendprivate(spl[0], spl[1])
 	else:
-		self.factory.sendtoall(data)
+		self.factory.sendtoall("["+self.getName()+"]"+data)
  
 class ServerFactory(Factory):
 	protocol = Server
